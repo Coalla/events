@@ -1,3 +1,3 @@
 web: bundle exec rackup
-redis: rm dump.rdb && redis-server
+redis: rm -f dump.rdb && redis-server
 queue: bundle exec sidekiq -r ./sidekiq.rb

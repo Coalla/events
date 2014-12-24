@@ -1,6 +1,7 @@
 require 'sidekiq'
 require './processors'
 require 'json'
+
 class EventWorker
   include Sidekiq::Worker
 
@@ -9,4 +10,5 @@ class EventWorker
       handler.process(event, JSON.parse(data))
     end
   end
+
 end
