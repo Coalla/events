@@ -1,6 +1,6 @@
 require 'sinatra'
 require './event_worker'
 
-get '/event' do
+post '/event' do
   EventWorker.perform_async(params[:event], params[:data])
 end
